@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sHOP</title>
+  </head>
+  <body>
+    <h2>Simple Java Script to Choose a Beverage</h2>
+
+    <p id="demo"></p>
+
+    <script>
+      let choice = prompt("Will you take  Tea or Coffe?").toLowerCase();
+      if (choice == "tea") {
+        document.getElementById("demo").innerHTML = "You chose Tea";
+      } else if (choice == "coffee") {
+        document.getElementById("demo").innerHTML = "You chose Cofee";
+      } else {
+        document.getElementById("demo").innerHTML =
+          "Please chose either Tea or Cofee";
+      }
+    </script>
+  </body>
+</html>
