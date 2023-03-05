@@ -1,4 +1,6 @@
-let choice = prompt("Will you take  Tea or Coffe?");
+let choice = null;
+  choice = toString(prompt("Will you take  Tea or Coffe?"));
+// choice = choice.toString();
 choice = choice.toLowerCase();
 if (choice === "tea") {
   document.getElementById("demo").innerHTML = "You chose Tea";
