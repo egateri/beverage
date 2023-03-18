@@ -1,30 +1,62 @@
 const main = () => {
-  let choice = null;
-
-  choice = prompt("Will you take  Tea or Coffe?");
-
-  choice = choice.toLocaleLowerCase();
+  var x = document.getElementById("myDIV");
+  var y = document.getElementById("myDIV2");
+  const d = new Date();
+  const listOfDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wendsday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  var day = d.getDay();
+  var choice = null;
+  var dayOfWeek = listOfDays[day];
+  choice = checkBeverageChoice();
 
   if (choice === "tea") {
-    document.getElementById("demo").innerHTML = "You chose Tea";
-    document.getElementById("demo").style.color = "green";
-    document.getElementById("button").style.display = 'none';
-    document.getElementById("form").style.display = 'block';
-    
-    //alert("Tea");
+    let response = null;
+
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      y.style.display = "none";
+    } else {
+      x.style.display = "none";
+      y.style.display = "block";
+      document.getElementById("test").style.color = "green";
+      document.getElementById("test").innerHTML =
+        "Today is " + dayOfWeek + ".You chose Tea";
+    }
   } else if (choice === "coffee") {
-    document.getElementById("demo").innerHTML = "You chose Cofee";
-    document.getElementById("demo").style.color = "green";
-    document.getElementById("button").style.display = 'none'
-    document.getElementById("form").style.display = 'block';
-    //alert("coffe");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      y.style.display = "none";
+    } else {
+      x.style.display = "none";
+      y.style.display = "block";
+      document.getElementById("test").style.color = "Brown";
+      document.getElementById("test").innerHTML =
+        "Today is " + dayOfWeek + ".You chose Coffee";
+    }
   } else {
-    document.getElementById("demo").innerHTML =
-      "Please chose either Tea or Cofee";
-      document.getElementById("demo").style.color = "red";
-      document.getElementById("button").style.display = 'none'
-      document.getElementById("form").style.display = 'block';
-      
-    // alert("Error: Choose tea or coffee");
+  
+    document.getElementById("test").style.color = "red";
+    document.getElementById("test").innerHTML = "Choose Tea or Coffee!";
+  }
+
+  function checkBeverageChoice() {
+    let beverageChoice = null;
+
+    if (document.getElementById("tea").checked === true) {
+      beverageChoice = "tea";
+      return beverageChoice;
+    } else if (document.getElementById("coffee").checked === true) {
+      beverageChoice = "coffee";
+      return beverageChoice;
+    } else {
+      return null;
+    }
   }
 };
