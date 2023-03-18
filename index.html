@@ -8,7 +8,15 @@
   </head>
   <body>
     <h2 id="demo">Simple Java Script to Choose a Beverage</h2>
-    <button onclick="main()">Click me to Choose your Beverage</button>
+    <button id="button" onclick="main()">Click me to Choose your Beverage</button>
     <script src="script.js"></script>
+    <br>
+    <style>
+      #form { display: none }
+      </style>
+    <form id ="form" action="index.html">
+      <button type="submit">Try Another Chance ?</button>
+     </form>
+    
   </body>
 </html>
